@@ -1,0 +1,13 @@
+---  
+- name: Working of loops
+  hosts: "{{ target_hosts | default('localhost') }}"
+  vars:
+    fruits:
+      - Apple
+      - Banana
+      - Orange
+  tasks: 
+    - name: Loops
+      debug:
+        msg: "Fruit : {{ item }}"
+      loop: "{{ fruits }}" 

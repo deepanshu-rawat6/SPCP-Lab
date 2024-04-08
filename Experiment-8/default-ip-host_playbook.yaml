@@ -1,0 +1,7 @@
+---  
+- name: Print the default IPv4 address of each host along with the hostname
+  hosts: "{{ target_hosts | default('localhost') }}"
+  tasks:  
+    - name: Print hostname and IPv4 address
+      debug:
+        msg: "Hostname : {{ inventory_hostname }} - IP: {{ ansible_default_ipv4.address }}"

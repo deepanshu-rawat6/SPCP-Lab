@@ -1,0 +1,10 @@
+---
+- name: Declare Variables
+  hosts: "{{ target_hosts | default('localhost') }}"
+  vars:
+    greeting: "Hello"
+    name: "Deepanshu!"
+  tasks:
+    - name: Print Greeting
+      debug:
+        msg: "{{ greeting }}, {{ name }}!"

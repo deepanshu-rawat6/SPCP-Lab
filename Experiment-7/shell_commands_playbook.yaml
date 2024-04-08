@@ -1,0 +1,11 @@
+---
+- name: Perform Shell Commands
+  hosts: localhost
+  tasks:
+    - name: Run a Shell Command
+      shell: echo "This is a shell command"
+      register: shell_output
+
+    - name: Print Shell Command Output
+      debug:
+        msg: "{{ shell_output.stdout }}"

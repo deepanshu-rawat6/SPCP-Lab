@@ -1,0 +1,7 @@
+---  
+- name: Print the user-defined variable from the command line
+  hosts: "{{ target_hosts | default('localhost') }}"
+  tasks: 
+    - name: Print user-defined variable
+      debug:
+        msg: "User-defined variable: {{ my_var }}"

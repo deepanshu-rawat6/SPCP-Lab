@@ -1,0 +1,7 @@
+---  
+- name: Pass multiple variables from the command line
+  hosts: "{{ target_hosts | default('localhost') }}"
+  tasks: 
+    - name: Display multiple variables
+      debug:
+        msg: "Variable 1: {{ var1 }}, Variable 2: {{ var2 }}"
